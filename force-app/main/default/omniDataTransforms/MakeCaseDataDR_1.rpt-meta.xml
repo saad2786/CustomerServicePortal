@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;CaseDetail&quot; : {
+    &quot;Block2&quot; : {
+      &quot;ProductName-Block&quot; : {
+        &quot;ProductName&quot; : &quot;Drug Eluting Stent (DES)&quot;,
+        &quot;Name&quot; : &quot;Drug Eluting Stent (DES)&quot;,
+        &quot;Id&quot; : &quot;01tdN000006fa0sQAA&quot;
+      },
+      &quot;ErrorDescription&quot; : &quot;sdads&quot;,
+      &quot;BusinessImpact&quot; : &quot;Critical&quot;
+    },
+    &quot;Block5&quot; : null,
+    &quot;Block3&quot; : {
+      &quot;InvoiceNumber&quot; : &quot;dasda&quot;,
+      &quot;InvoiceDate&quot; : &quot;2025-12-29&quot;,
+      &quot;BillingIssueType&quot; : &quot;Overcharged&quot;,
+      &quot;PaymentStatus&quot; : &quot;Paid&quot;,
+      &quot;AdditionalNotes&quot; : &quot;sdfsdfds&quot;,
+      &quot;InvoiceAmount&quot; : 23444
+    }
+  }
+}</expectedInputJson>
+    <fieldLevelSecurityEnabled>true</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <isManagedUsingStdDesigner>false</isManagedUsingStdDesigner>
+    <name>MakeCaseDataDR</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>45b5b2e2-4ef2-4038-a3e2-6a24339294a9</globalKey>
+        <inputFieldName>CaseDetail:Block3:InvoiceDate</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>MakeCaseDataDR</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Case:InvoiceDate</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <transformValuesMappings>{ }</transformValuesMappings>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>ca1a20a1-3a4a-4381-a9eb-095b4f0f1db8</globalKey>
+        <inputFieldName>CaseDetail:Block3:BillingIssueType</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>MakeCaseDataDR</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Case:BillingIssueType</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <transformValuesMappings>{ }</transformValuesMappings>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>65b22138-af8e-4f61-813d-10b9bbc54992</globalKey>
+        <inputFieldName>CaseDetail:Block3:PaymentStatus</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>MakeCaseDataDR</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Case:PaymentStatus</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <transformValuesMappings>{ }</transformValuesMappings>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>65a2fad6-5eba-40b9-9607-bc2e06164507</globalKey>
+        <inputFieldName>CaseDetail:CaseId</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>MakeCaseDataDR</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Case:Id</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <transformValuesMappings>{ }</transformValuesMappings>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>3991db3e-8221-4579-a684-6a2077b3c33a</globalKey>
+        <inputFieldName>CaseDetail:Block2:ErrorDescription</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>MakeCaseDataDR</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Case:Description</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <transformValuesMappings>{ }</transformValuesMappings>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>b0f831d5-a976-4ffb-b24c-6f9032bd6611</globalKey>
+        <inputFieldName>CaseDetail:Block2:ProductName-Block:Name</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>MakeCaseDataDR</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Case:ProductName</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <transformValuesMappings>{ }</transformValuesMappings>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>0d736d3b-0390-459c-864b-8a2f74645f87</globalKey>
+        <inputFieldName>CaseDetail:Block3:InvoiceAmount</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>MakeCaseDataDR</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Case:InvoiceAmount</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <transformValuesMappings>{ }</transformValuesMappings>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>d5005dad-f1ec-4ca2-b42d-4c11437a0da3</globalKey>
+        <inputFieldName>CaseDetail:Block3:AdditionalNotes</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>MakeCaseDataDR</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Case:Note</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <transformValuesMappings>{ }</transformValuesMappings>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>0af3088d-70f7-4cec-98b2-25781408ce7c</globalKey>
+        <inputFieldName>CaseDetail:Block3:InvoiceAmount</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>MakeCaseDataDR</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Case:Amount</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <transformValuesMappings>{ }</transformValuesMappings>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>a470ac8a-92f3-4f19-a341-ca368f248606</globalKey>
+        <inputFieldName>CaseDetail:Block7:Priority</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>MakeCaseDataDR</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Case:Priority</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <transformValuesMappings>{ }</transformValuesMappings>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>bd0520a8-e1b7-4263-bb1c-0154190ca378</globalKey>
+        <inputFieldName>CaseDetail:Block2:ProductName-Block:Id</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>MakeCaseDataDR</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Case:Product</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <transformValuesMappings>{ }</transformValuesMappings>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>5d955c54-e3cc-4e22-99be-b03e9777191f</globalKey>
+        <inputFieldName>CaseDetail:Block2:BusinessImpact</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>MakeCaseDataDR</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Case:BusinessImpact</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <transformValuesMappings>{ }</transformValuesMappings>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>7f3c6c8e-012e-4d9d-b582-6f37fe960dfe</globalKey>
+        <inputFieldName>CaseDetail:Block3:InvoiceNumber</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>MakeCaseDataDR</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Case:InvoiceNumber</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <transformValuesMappings>{ }</transformValuesMappings>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>81ee6a42-c3d6-4800-a049-fcd6a5d03ca4</globalKey>
+        <inputFieldName>CaseDetail:Block5:ServiceRequestType</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>MakeCaseDataDR</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Case:ServiceRequestType</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <transformValuesMappings>{ }</transformValuesMappings>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>0637c5a5-0b14-4565-872c-b8416835461e</globalKey>
+        <inputFieldName>CaseDetail:Block5:ServiceDescription</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>MakeCaseDataDR</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Case:ServiceDescription</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <transformValuesMappings>{ }</transformValuesMappings>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>JSON</outputType>
+    <previewJsonData>{
+  &quot;CaseDetail&quot; : {
+    &quot;Block2&quot; : {
+      &quot;ProductName-Block&quot; : {
+        &quot;ProductName&quot; : &quot;Drug Eluting Stent (DES)&quot;,
+        &quot;Name&quot; : &quot;Drug Eluting Stent (DES)&quot;,
+        &quot;Id&quot; : &quot;01tdN000006fa0sQAA&quot;
+      },
+      &quot;ErrorDescription&quot; : &quot;sdads&quot;,
+      &quot;BusinessImpact&quot; : &quot;Critical&quot;
+    },
+    &quot;Block5&quot; : null,
+    &quot;Block7&quot; : {
+      &quot;Priority&quot; : &quot;Low&quot;
+    },
+    &quot;Block3&quot; : {
+      &quot;InvoiceNumber&quot; : &quot;dasda&quot;,
+      &quot;InvoiceDate&quot; : &quot;2025-12-29&quot;,
+      &quot;BillingIssueType&quot; : &quot;Overcharged&quot;,
+      &quot;PaymentStatus&quot; : &quot;Paid&quot;,
+      &quot;AdditionalNotes&quot; : &quot;sdfsdfds&quot;,
+      &quot;InvoiceAmount&quot; : 23444
+    }
+  }
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>0.0</synchronousProcessThreshold>
+    <type>Transform</type>
+    <uniqueName>MakeCaseDataDR_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

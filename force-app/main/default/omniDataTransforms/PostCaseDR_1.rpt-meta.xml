@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <expectedInputJson>{
+  &quot;Id&quot; : &quot;&quot;,
+  &quot;PaymentStatus&quot; : &quot;Paid&quot;,
+  &quot;BillingIssueType&quot; : &quot;Duplicate Invoice&quot;,
+  &quot;InvoiceAmount&quot; : 5000,
+  &quot;InvoiceDate&quot; : &quot;2026-01-04&quot;,
+  &quot;InvoiceNumber&quot; : &quot;523423&quot;,
+  &quot;IssueType&quot; : &quot;012dN0000029XWfQAM&quot;,
+  &quot;Description&quot; : &quot;Invoice amount does not match usage&quot;,
+  &quot;Status&quot; : &quot;In Progress&quot;
+}</expectedInputJson>
+    <fieldLevelSecurityEnabled>true</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <isManagedUsingStdDesigner>false</isManagedUsingStdDesigner>
+    <name>PostCaseDR</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>91972e04-fa67-44f7-86ba-d821ecc6f954</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>PostCaseDR</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>Case</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>9f756041-316d-4c3f-803d-1ecff7d5bb41</globalKey>
+        <inputFieldName>InvoiceNumber</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>PostCaseDR</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Invoice_Number__c</outputFieldName>
+        <outputObjectName>Case</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>8059217a-5702-40ce-afe5-eea2cce50877</globalKey>
+        <inputFieldName>Id</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>PostCaseDR</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>Case</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>04f0a9f6-b112-4c16-947e-33bb911f32e7</globalKey>
+        <inputFieldName>PaymentStatus</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>PostCaseDR</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Payment_Status__c</outputFieldName>
+        <outputObjectName>Case</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>true</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>3150d9f3-54f8-4f44-9cb3-117f916f9f13</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>PostCaseDR</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>SLA_Tracker__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <globalKey>423214e2-a477-416b-b872-e721b8ce8fe5</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedFieldName>Id</linkedFieldName>
+        <linkedObjectSequence>1.0</linkedObjectSequence>
+        <migrationValue>FAKEMAPPING</migrationValue>
+        <name>PostCaseDR</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>Case__c</outputFieldName>
+        <outputObjectName>SLA_Tracker__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>7112dc1b-f60d-4d13-a41e-b5dc6fde494d</globalKey>
+        <inputFieldName>SLAStartTime</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>PostCaseDR</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>SLA_Start_Time__c</outputFieldName>
+        <outputObjectName>SLA_Tracker__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <transformValuesMappings>{ }</transformValuesMappings>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>Active</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>bfe47a81-5bfd-4a0f-a849-48783c6709a1</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>PostCaseDR</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>SLA_Status__c</outputFieldName>
+        <outputObjectName>SLA_Tracker__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <transformValuesMappings>{ }</transformValuesMappings>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| NOW</formulaConverted>
+        <formulaExpression>NOW()</formulaExpression>
+        <formulaResultPath>SLAStartTime</formulaResultPath>
+        <formulaSequence>1.0</formulaSequence>
+        <globalKey>d1de1f56-d2dc-44e8-9eac-2067b39af42a</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>PostCaseDR</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>71424c3a-648d-4f28-9c80-b70c17e85b80</globalKey>
+        <inputFieldName>InvoiceDate</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>PostCaseDR</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Invoice_Date__c</outputFieldName>
+        <outputObjectName>Case</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>cd66c094-32b2-46b2-821f-b8e5800cf8b1</globalKey>
+        <inputFieldName>BillingIssueType</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>PostCaseDR</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Billing_Issue_Type__c</outputFieldName>
+        <outputObjectName>Case</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>35b35754-45da-4a7f-b386-6af6de26c96b</globalKey>
+        <inputFieldName>Description</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>PostCaseDR</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Description</outputFieldName>
+        <outputObjectName>Case</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>bb2df1ae-1ec8-436a-a04a-47c36931d7d8</globalKey>
+        <inputFieldName>IssueType</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>PostCaseDR</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>RecordTypeId</outputFieldName>
+        <outputObjectName>Case</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>2249c878-9f96-4460-a795-297adb79eda5</globalKey>
+        <inputFieldName>Status</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>PostCaseDR</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Status</outputFieldName>
+        <outputObjectName>Case</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>5d3bad98-d37d-41d2-90c1-798a5d6d49b6</globalKey>
+        <inputFieldName>Priority</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>PostCaseDR</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Priority</outputFieldName>
+        <outputObjectName>Case</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <transformValuesMappings>{ }</transformValuesMappings>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>8c392dab-9d1c-467d-85ff-898be2f66f0a</globalKey>
+        <inputFieldName>InvoiceAmount</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>PostCaseDR</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Invoice_Amount__c</outputFieldName>
+        <outputObjectName>Case</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <defaultValue>0</defaultValue>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>e7542c28-5179-4f2e-b672-bedeb2fab7ed</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>PostCaseDR</name>
+        <outputCreationSequence>2.0</outputCreationSequence>
+        <outputFieldName>Escalation_Level__c</outputFieldName>
+        <outputObjectName>SLA_Tracker__c</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <transformValuesMappings>{ }</transformValuesMappings>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>SObject</outputType>
+    <previewJsonData>{
+  &quot;Id&quot; : &quot;&quot;,
+  &quot;PaymentStatus&quot; : &quot;Paid&quot;,
+  &quot;BillingIssueType&quot; : &quot;Duplicate Invoice&quot;,
+  &quot;InvoiceAmount&quot; : 5000,
+  &quot;InvoiceDate&quot; : &quot;2026-01-04&quot;,
+  &quot;InvoiceNumber&quot; : &quot;523423&quot;,
+  &quot;Priority&quot; : &quot;Low&quot;,
+  &quot;IssueType&quot; : &quot;012dN0000029XWfQAM&quot;,
+  &quot;Description&quot; : &quot;Invoice amount does not match usage&quot;,
+  &quot;Status&quot; : &quot;In Progress&quot;
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObject>json</sourceObject>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>0.0</synchronousProcessThreshold>
+    <type>Load</type>
+    <uniqueName>PostCaseDR_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>

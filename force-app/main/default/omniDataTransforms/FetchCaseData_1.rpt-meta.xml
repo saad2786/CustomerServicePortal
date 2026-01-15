@@ -1,0 +1,318 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OmniDataTransform xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <assignmentRulesUsed>false</assignmentRulesUsed>
+    <deletedOnSuccess>false</deletedOnSuccess>
+    <errorIgnored>false</errorIgnored>
+    <expectedOutputJson>{
+  &quot;CaseNumber&quot; : &quot;2&quot;,
+  &quot;Status&quot; : &quot;active&quot;,
+  &quot;Priority&quot; : &quot;medium&quot;
+}</expectedOutputJson>
+    <fieldLevelSecurityEnabled>true</fieldLevelSecurityEnabled>
+    <inputType>JSON</inputType>
+    <isManagedUsingStdDesigner>false</isManagedUsingStdDesigner>
+    <name>FetchCaseData</name>
+    <nullInputsIncludedInOutput>false</nullInputsIncludedInOutput>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>f9e9384a-5061-4784-87aa-057b39178488</globalKey>
+        <inputFieldName>SLARemainingMinutes</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FetchCaseData</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>SLARemainingMinutes</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <transformValuesMappings>{ }</transformValuesMappings>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:remainingHours &apos;h/\/\/&apos; | var:remainingMin 0 &lt; 60 var:remainingMin + var:remainingMin IF &apos;m&apos; CONCAT</formulaConverted>
+        <formulaExpression>CONCAT(remainingHours,&apos;h &apos;,IF(remainingMin &lt; 0, (60 + remainingMin), remainingMin),&apos;m&apos;)</formulaExpression>
+        <formulaResultPath>SLARemainingTimeString</formulaResultPath>
+        <formulaSequence>6.0</formulaSequence>
+        <globalKey>4ef4b0ed-785c-4514-aa8f-212fa3f38eec</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FetchCaseData</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:SLATracker:SLA_DeadLine__c DATETIMETOUNIX | | NOW DATETIMETOUNIX -</formulaConverted>
+        <formulaExpression>DATETIMETOUNIX(%SLATracker:SLA_DeadLine__c%) - DATETIMETOUNIX(NOW())</formulaExpression>
+        <formulaResultPath>SLARemainingTimes</formulaResultPath>
+        <formulaSequence>1.0</formulaSequence>
+        <globalKey>90d89e4a-0fa1-4a6e-a2fd-a6edc9341e5e</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FetchCaseData</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>cff9c064-513d-4525-a126-08d693925228</globalKey>
+        <inputFieldName>SLARemainingTime</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FetchCaseData</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>SLARemainingTime</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <transformValuesMappings>{ }</transformValuesMappings>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:SLARemainingMinutes 60 / 0 ROUND</formulaConverted>
+        <formulaExpression>ROUND(SLARemainingMinutes/60, 0)</formulaExpression>
+        <formulaResultPath>remainingHoursABS</formulaResultPath>
+        <formulaSequence>4.0</formulaSequence>
+        <globalKey>d8306fca-4fb2-476a-8881-53305818efdb</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FetchCaseData</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:remainingMin 0 &lt; var:remainingHoursABS 1 - var:remainingHoursABS IF</formulaConverted>
+        <formulaExpression>IF(remainingMin &lt; 0, remainingHoursABS - 1, remainingHoursABS)</formulaExpression>
+        <formulaResultPath>remainingHours</formulaResultPath>
+        <formulaSequence>5.0</formulaSequence>
+        <globalKey>b416507f-2510-4c10-a9e6-dd21a42f3b50</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FetchCaseData</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:SLARemainingTimes 3600000 / 0 ROUND</formulaConverted>
+        <formulaExpression>ROUND(SLARemainingTimes/3600000, 0)</formulaExpression>
+        <formulaResultPath>SLARemainingTime</formulaResultPath>
+        <formulaSequence>7.0</formulaSequence>
+        <globalKey>c5899db1-91b8-4240-bc78-3ebf1d8a900c</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FetchCaseData</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>2f21d4af-04b0-4f7b-a730-631ed09745d3</globalKey>
+        <inputFieldName>Case:Subject</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FetchCaseData</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Subject</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <transformValuesMappings>{ }</transformValuesMappings>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>150df458-4aac-42e9-b149-c52d80d88989</globalKey>
+        <inputFieldName>Case:Id</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FetchCaseData</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Id</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <transformValuesMappings>{ }</transformValuesMappings>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>9cb0ffaf-7a13-446d-ab77-b0aa9669831c</globalKey>
+        <inputFieldName>Case:Description</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FetchCaseData</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Description</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <transformValuesMappings>{ }</transformValuesMappings>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>e17b69aa-e085-4877-bd92-74af3edab926</globalKey>
+        <inputFieldName>Case:CaseNumber</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FetchCaseData</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>CaseNumber</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <transformValuesMappings>{ }</transformValuesMappings>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>9b030009-fdde-4f75-a590-73f87f4c3f3f</globalKey>
+        <inputFieldName>Case:Status</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FetchCaseData</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Status</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <transformValuesMappings>{ }</transformValuesMappings>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>50d4ccce-0413-4077-8a6e-21820438ff53</globalKey>
+        <inputFieldName>Case:Priority</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FetchCaseData</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Priority</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <transformValuesMappings>{ }</transformValuesMappings>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>9bdcca4e-4b53-4ae2-af13-46aee8ec076a</globalKey>
+        <inputFieldName>SLARemainingTimeString</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FetchCaseData</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>SLARemainingTimeString</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <transformValuesMappings>{ }</transformValuesMappings>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | var:SLARemainingMinutes 60 / 2 ROUND | var:SLARemainingMinutes 60 / 0 ROUND - 60 * 0 ROUND</formulaConverted>
+        <formulaExpression>ROUND((ROUND(SLARemainingMinutes/60, 2) - ROUND(SLARemainingMinutes/60, 0))*60, 0)</formulaExpression>
+        <formulaResultPath>remainingMin</formulaResultPath>
+        <formulaSequence>3.0</formulaSequence>
+        <globalKey>cd478120-bec9-41da-b319-0da0af446236</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FetchCaseData</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <filterValue>caseId</filterValue>
+        <globalKey>cbb94304-77d4-4ee4-9ebb-18b621eeb777</globalKey>
+        <inputFieldName>Id</inputFieldName>
+        <inputObjectName>Case</inputObjectName>
+        <inputObjectQuerySequence>1.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FetchCaseData</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Case</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <filterOperator>=</filterOperator>
+        <filterValue>caseId</filterValue>
+        <globalKey>61fa7025-94ef-42e1-b22b-b0e522fd07e7</globalKey>
+        <inputFieldName>Case__c</inputFieldName>
+        <inputObjectName>SLA_Tracker__c</inputObjectName>
+        <inputObjectQuerySequence>2.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FetchCaseData</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>SLATracker</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <formulaConverted>| | var:SLARemainingTimes 60000 / 0 ROUND ABS</formulaConverted>
+        <formulaExpression>ABS(ROUND(SLARemainingTimes/60000, 0))</formulaExpression>
+        <formulaResultPath>SLARemainingMinutes</formulaResultPath>
+        <formulaSequence>2.0</formulaSequence>
+        <globalKey>64c6ec88-8a19-41ef-a9b9-ae7804f7cc89</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>FetchCaseData</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <outputType>JSON</outputType>
+    <previewJsonData>{
+  &quot;caseId&quot; : &quot;500dN00000JYqffQAD&quot;
+}</previewJsonData>
+    <processSuperBulk>false</processSuperBulk>
+    <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>
+    <rollbackOnError>false</rollbackOnError>
+    <sourceObjectDefault>false</sourceObjectDefault>
+    <synchronousProcessThreshold>0.0</synchronousProcessThreshold>
+    <type>Extract</type>
+    <uniqueName>FetchCaseData_1</uniqueName>
+    <versionNumber>1.0</versionNumber>
+    <xmlDeclarationRemoved>false</xmlDeclarationRemoved>
+</OmniDataTransform>
