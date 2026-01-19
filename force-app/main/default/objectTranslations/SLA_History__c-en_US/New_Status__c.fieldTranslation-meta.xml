@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- New Status --></label>
+    <name>New_Status__c</name>
+    <picklistValues>
+        <masterLabel>Active</masterLabel>
+        <translation><!-- Active --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Breached</masterLabel>
+        <translation><!-- Breached --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Met</masterLabel>
+        <translation><!-- Met --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Near Breach</masterLabel>
+        <translation><!-- Near Breach --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Billing_Issue_Type__c</fullName>
+    <label>Billing Issue Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Overcharged</fullName>
+                <default>false</default>
+                <label>Overcharged</label>
+            </value>
+            <value>
+                <fullName>Incorrect Tax</fullName>
+                <default>false</default>
+                <label>Incorrect Tax</label>
+            </value>
+            <value>
+                <fullName>Duplicate Invoice</fullName>
+                <default>false</default>
+                <label>Duplicate Invoice</label>
+            </value>
+            <value>
+                <fullName>Refund Request</fullName>
+                <default>false</default>
+                <label>Refund Request</label>
+            </value>
+            <value>
+                <fullName>Payment Not Reflected</fullName>
+                <default>false</default>
+                <label>Payment Not Reflected</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
