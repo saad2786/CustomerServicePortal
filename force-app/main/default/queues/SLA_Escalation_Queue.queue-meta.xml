@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Queue xmlns="http://soap.sforce.com/2006/04/metadata">
+    <doesSendEmailToMembers>true</doesSendEmailToMembers>
+    <email>patilsaad2786@gmail.com</email>
+    <name>SLA_Escalation_Queue</name>
+    <queueMembers>
+        <users>
+            <user>alan.reed.ygmspplwpjby.66v9dr9mzbr9.9qj.oo.lpxezutcix3z.aq1l7zaf0vq2@force.com</user>
+            <user>ahuff.fma9khmspitx.mhhfqlf8uaic.awkrzzw.ag.mebyrqbsvdnn.1bvj0hczu09g@force.com</user>
+            <user>andy.molina.gfu7otgc7gky.zz6tkvablb6e.6.go.vtf1rqxnmk7y.m0pomwo3nay4@force.com</user>
+            <user>morgan_cuevas_83f4edad-ad4f-4b06-aa5b.dlkt3zfplmm7.5tvjv2y2hswf@force.com</user>
+            <user>ashapranav.3te5b6cyxtep.pxyek7uecn7s.xb8howfmlpgt.yxksxzt2leix@force.com</user>
+            <user>cindy.lo.g7knhifuo4uj.g3zmplwaol6w.j8hg.nn.ihoizuzl2zkv.wajmtx40ojcn@force.com</user>
+            <user>r.jackson.1xiyysmy51s0.umxxfrjxvbg3.nkfmoxqlepwe.nfvxewaha9zs@force.com</user>
+        </users>
+    </queueMembers>
+    <queueSobject>
+        <sobjectType>Case</sobjectType>
+    </queueSobject>
+    <queueSobject>
+        <sobjectType>SLA_Tracker__c</sobjectType>
+    </queueSobject>
+</Queue>
