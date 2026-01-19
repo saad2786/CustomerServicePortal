@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldSets>
+        <label><!-- HcCareGapList --></label>
+        <name>HealthCloudGA__HcCareGapList</name>
+    </fieldSets>
+    <recordTypes>
+        <description><!-- Record type for notification and approval of an inpatient admission. --></description>
+        <label><!-- Admission --></label>
+        <name>Admission</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Record type for review and disposition of an appeal related to a prior authorization or admission decision. --></description>
+        <label><!-- Appeal --></label>
+        <name>Appeal</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Billing Support --></label>
+        <name>Billing_Support</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Record type for review and resolution of a complaint. --></description>
+        <label><!-- Complaint --></label>
+        <name>Complaint</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Record type for review and approval of a continued stay related to an inpatient admission. --></description>
+        <label><!-- Concurrent Review --></label>
+        <name>ConcurrentReview</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Record type for prior authorization request and approval of a prescription drug. --></description>
+        <label><!-- Drug Request --></label>
+        <name>DrugRequest</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- General Inquiry --></label>
+        <name>General_Inquiry</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Record type for review and resolution of a grievance. --></description>
+        <label><!-- Grievance --></label>
+        <name>Grievance</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Defines a care gap for an individual --></description>
+        <label><!-- CareGap --></label>
+        <name>HealthCloudGA__CareGap</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Defines a care plan for an individual and their care team --></description>
+        <label><!-- CarePlan --></label>
+        <name>HealthCloudGA__CarePlan</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Home Health --></label>
+        <name>HomeHealth</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- It is created to capture all the cases related to medical device requests --></description>
+        <label><!-- MedicalDeviceRequest --></label>
+        <name>MedicalDeviceRequest</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- It is created to capture all the cases related to medical device returns --></description>
+        <label><!-- MedicalDeviceReturn --></label>
+        <name>MedicalDeviceReturn</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- PreAuthorization --></label>
+        <name>PreAuthorization</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Public Health Case --></label>
+        <name>Public_Health_Case</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Roster File --></label>
+        <name>RosterFile</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Service Case --></label>
+        <name>ServiceCase</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Record type for prior authorization request and approval of a procedure or service. --></description>
+        <label><!-- Service Request --></label>
+        <name>ServiceRequest</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- SocialDeterminant --></label>
+        <name>SocialDeterminant</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- Technical Support --></label>
+        <name>Technical_Support</name>
+    </recordTypes>
+    <webLinks>
+        <label><!-- Apply_Care_Plan_Templates --></label>
+        <name>HealthCloudGA__Apply_Care_Plan_Templates</name>
+    </webLinks>
+</CustomObjectTranslation>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+  <!-- OmniScript -->
+  <types>
+    <members>ServicePortal_CreateCase_English_1</members>
+    <name>OmniScript</name>
+  </types>
+
+  <!-- OmniStudio Integration Procedures -->
+  <types>
+    <!-- Repo contains ServicePortal_CaseCount_English_1.oip-meta.xml -->
+    <!-- If you intend CalculateCountsForCases specifically, add it to the repo or update this member -->
+    <members>ServicePortal_CaseCount_English_1</members>
+    <name>OmniIntegrationProcedure</name>
+  </types>
+
+  <!-- OmniStudio DataRaptors / Omni Data Transforms -->
+  <types>
+    <members>CaseCountsExtract_1</members>
+    <members>FetchCaseData_1</members>
+    <members>FetchListCase_1</members>
+    <members>GetCaseData_1</members>
+    <members>GetCaseDetails_1</members>
+    <members>MakeCaseDataDR_1</members>
+    <members>PostCaseDR_1</members>
+    <members>UpdateCaseDR_1</members>
+    <name>OmniDataTransform</name>
+  </types>
+
+  <!-- OmniStudio FlexCards / OmniUiCards -->
+  <types>
+    <members>BillingIssueDetail_Developer_1</members>
+    <members>BillingIssueDetail_Developer_2</members>
+    <members>CaseCountCard_Developer_1</members>
+    <members>CaseDetailPreview_Developer_1</members>
+    <members>CaseDetailPreviewForOS_Developer_1</members>
+    <members>CaseListCard_Developer_1</members>
+    <members>CaseListChildCard_Developer_1</members>
+    <members>CaseSummaryCard_Developer_1</members>
+    <members>HighPriorityCaseCount_Developer_1</members>
+    <members>HighPriorityCount_Developer_1</members>
+    <members>OpenCaseCount_Developer_1</members>
+    <members>ServiceIssueDetail_Developer_1</members>
+    <members>ServiceIssueDetail_Developer_2</members>
+    <members>SLABreachedCount_Developer_1</members>
+    <members>SLANearBreachCount_Developer_1</members>
+    <members>SLAVisualizationCard_Developer_1</members>
+    <members>TechnicalIssueDetail_Developer_1</members>
+    <members>TechnicalIssueDetail_Developer_2</members>
+    <name>OmniUiCard</name>
+  </types>
+
+  <!-- Apex Classes -->
+  <types>
+    <!-- SLAStatusScheduler will be deployed if the class exists in classes/ -->
+    <members>SLAStatusScheduler</members>
+    <name>ApexClass</name>
+  </types>
+
+  <!-- Custom Objects (deploy full objects with all child metadata) -->
+  <types>
+    <members>Case</members>
+    <members>SLA_History__c</members>
+    <members>SLA_Tracker__c</members>
+    <name>CustomObject</name>
+  </types>
+ 
+
+  <version>61.0</version>
+</Package>

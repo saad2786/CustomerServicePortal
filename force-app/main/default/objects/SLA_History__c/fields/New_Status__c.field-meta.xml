@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_Status__c</fullName>
+    <label>New Status</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Active</fullName>
+                <default>false</default>
+                <label>Active</label>
+            </value>
+            <value>
+                <fullName>Near Breach</fullName>
+                <default>false</default>
+                <label>Near Breach</label>
+            </value>
+            <value>
+                <fullName>Breached</fullName>
+                <default>false</default>
+                <label>Breached</label>
+            </value>
+            <value>
+                <fullName>Met</fullName>
+                <default>false</default>
+                <label>Met</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

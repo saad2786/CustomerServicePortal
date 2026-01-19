@@ -379,7 +379,7 @@
   &quot;hide&quot; : false,
   &quot;disOnTplt&quot; : false,
   &quot;minDate&quot; : &quot;&quot;,
-  &quot;maxDate&quot; : &quot;&quot;
+  &quot;maxDate&quot; : &quot;TODAY()&quot;
 }</propertySetConfig>
                 <sequenceNumber>4.0</sequenceNumber>
                 <type>Date</type>
@@ -500,8 +500,42 @@
   &quot;show&quot; : null,
   &quot;HTMLTemplateId&quot; : &quot;&quot;
 }</propertySetConfig>
-                <sequenceNumber>1.0</sequenceNumber>
+                <sequenceNumber>2.0</sequenceNumber>
                 <type>Line Break</type>
+            </childElements>
+            <childElements>
+                <isActive>true</isActive>
+                <isOmniScriptEmbeddable>false</isOmniScriptEmbeddable>
+                <level>2.0</level>
+                <name>PreferredServiceDate</name>
+                <omniProcessVersionNumber>0.0</omniProcessVersionNumber>
+                <propertySetConfig>{
+  &quot;controlWidth&quot; : 6,
+  &quot;label&quot; : &quot;Preferred Service Date&quot;,
+  &quot;showInputWidth&quot; : false,
+  &quot;inputWidth&quot; : 12,
+  &quot;required&quot; : false,
+  &quot;repeat&quot; : false,
+  &quot;repeatClone&quot; : false,
+  &quot;repeatLimit&quot; : null,
+  &quot;readOnly&quot; : false,
+  &quot;defaultValue&quot; : null,
+  &quot;help&quot; : false,
+  &quot;helpText&quot; : &quot;&quot;,
+  &quot;dateType&quot; : &quot;string&quot;,
+  &quot;modelDateFormat&quot; : &quot;yyyy-MM-dd&quot;,
+  &quot;dateFormat&quot; : &quot;MM-dd-yyyy&quot;,
+  &quot;show&quot; : null,
+  &quot;conditionType&quot; : &quot;Hide if False&quot;,
+  &quot;accessibleInFutureSteps&quot; : false,
+  &quot;HTMLTemplateId&quot; : &quot;&quot;,
+  &quot;hide&quot; : false,
+  &quot;disOnTplt&quot; : false,
+  &quot;minDate&quot; : &quot;TODAY()&quot;,
+  &quot;maxDate&quot; : &quot;&quot;
+}</propertySetConfig>
+                <sequenceNumber>1.0</sequenceNumber>
+                <type>Date</type>
             </childElements>
             <childElements>
                 <isActive>true</isActive>
@@ -535,7 +569,7 @@
   &quot;hide&quot; : false,
   &quot;disOnTplt&quot; : false
 }</propertySetConfig>
-                <sequenceNumber>2.0</sequenceNumber>
+                <sequenceNumber>3.0</sequenceNumber>
                 <type>Text Area</type>
             </childElements>
             <childElements>
@@ -1120,7 +1154,7 @@
   &quot;ignoreCache&quot; : false,
   &quot;bundle&quot; : &quot;MakeCaseDataDR&quot;,
   &quot;remoteTimeout&quot; : 30000,
-  &quot;sendJSONPath&quot; : &quot;CaseDetail&quot;,
+  &quot;sendJSONPath&quot; : &quot;&quot;,
   &quot;sendJSONNode&quot; : &quot;&quot;,
   &quot;responseJSONPath&quot; : &quot;Case&quot;,
   &quot;responseJSONNode&quot; : &quot;CaseInfo&quot;,
@@ -1177,8 +1211,8 @@
   &quot;bundle&quot; : &quot;PostCaseDR&quot;,
   &quot;remoteTimeout&quot; : 30000,
   &quot;postTransformBundle&quot; : &quot;&quot;,
-  &quot;sendJSONPath&quot; : &quot;&quot;,
-  &quot;sendJSONNode&quot; : &quot;&quot;,
+  &quot;sendJSONPath&quot; : &quot;CaseInfo&quot;,
+  &quot;sendJSONNode&quot; : &quot;Case&quot;,
   &quot;inProgressMessage&quot; : &quot;In Progress&quot;,
   &quot;postMessage&quot; : &quot;Done&quot;,
   &quot;failureNextLabel&quot; : &quot;Continue&quot;,

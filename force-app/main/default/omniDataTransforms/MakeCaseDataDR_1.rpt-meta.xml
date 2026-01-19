@@ -94,8 +94,53 @@
     <omniDataTransformItem>
         <disabled>false</disabled>
         <filterGroup>0.0</filterGroup>
+        <globalKey>5a53ae5c-778c-46b9-89c1-96c57228f431</globalKey>
+        <inputFieldName>SelectIssueType:Block1:IssueType</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>MakeCaseDataDR</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Case:IssueType</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <transformValuesMappings>{ }</transformValuesMappings>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>12be08f3-c167-42f7-9fd4-2525b855fe2c</globalKey>
+        <inputFieldName>CaseSubject:Subject</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>MakeCaseDataDR</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Case:Subject</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <transformValuesMappings>{ }</transformValuesMappings>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
         <globalKey>3991db3e-8221-4579-a684-6a2077b3c33a</globalKey>
         <inputFieldName>CaseDetail:Block2:ErrorDescription</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>MakeCaseDataDR</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Case:Description</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <transformValuesMappings>{ }</transformValuesMappings>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>0cc6afa6-030d-4e65-90f3-cb4914948015</globalKey>
+        <inputFieldName>CaseDetail:Block5:ServiceDescription</inputFieldName>
         <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
         <linkedObjectSequence>0.0</linkedObjectSequence>
         <name>MakeCaseDataDR</name>
@@ -131,6 +176,21 @@
         <name>MakeCaseDataDR</name>
         <outputCreationSequence>1.0</outputCreationSequence>
         <outputFieldName>Case:InvoiceAmount</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <transformValuesMappings>{ }</transformValuesMappings>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>0c98e8e1-c997-4943-8c99-b33c261d85cd</globalKey>
+        <inputFieldName>CaseDetail:Block5:ServiceRequestCategory</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>MakeCaseDataDR</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Case:ServiceRequestCategory</outputFieldName>
         <outputObjectName>json</outputObjectName>
         <requiredForUpsert>false</requiredForUpsert>
         <transformValuesMappings>{ }</transformValuesMappings>
@@ -250,7 +310,22 @@
         <linkedObjectSequence>0.0</linkedObjectSequence>
         <name>MakeCaseDataDR</name>
         <outputCreationSequence>1.0</outputCreationSequence>
-        <outputFieldName>Case:ServiceDescription</outputFieldName>
+        <outputFieldName>Case:Description</outputFieldName>
+        <outputObjectName>json</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <transformValuesMappings>{ }</transformValuesMappings>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>9676f50a-a2ff-4fd3-9311-8edcb5cf958d</globalKey>
+        <inputFieldName>CaseDetail:Block5:PreferredServiceDate</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>MakeCaseDataDR</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Case:PreferredServiceDate</outputFieldName>
         <outputObjectName>json</outputObjectName>
         <requiredForUpsert>false</requiredForUpsert>
         <transformValuesMappings>{ }</transformValuesMappings>

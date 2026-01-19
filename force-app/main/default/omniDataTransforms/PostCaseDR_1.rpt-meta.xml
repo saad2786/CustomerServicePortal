@@ -5,15 +5,23 @@
     <deletedOnSuccess>false</deletedOnSuccess>
     <errorIgnored>false</errorIgnored>
     <expectedInputJson>{
-  &quot;Id&quot; : &quot;&quot;,
-  &quot;PaymentStatus&quot; : &quot;Paid&quot;,
-  &quot;BillingIssueType&quot; : &quot;Duplicate Invoice&quot;,
-  &quot;InvoiceAmount&quot; : 5000,
-  &quot;InvoiceDate&quot; : &quot;2026-01-04&quot;,
-  &quot;InvoiceNumber&quot; : &quot;523423&quot;,
-  &quot;IssueType&quot; : &quot;012dN0000029XWfQAM&quot;,
-  &quot;Description&quot; : &quot;Invoice amount does not match usage&quot;,
-  &quot;Status&quot; : &quot;In Progress&quot;
+  &quot;Case&quot; : {
+    &quot;Id&quot; : &quot;&quot;,
+    &quot;PaymentStatus&quot; : &quot;Paid&quot;,
+    &quot;BillingIssueType&quot; : &quot;Duplicate Invoice&quot;,
+    &quot;InvoiceAmount&quot; : 5000,
+    &quot;InvoiceDate&quot; : &quot;2026-01-04&quot;,
+    &quot;InvoiceNumber&quot; : &quot;523423&quot;,
+    &quot;IssueType&quot; : &quot;012dN0000029XWfQAM&quot;,
+    &quot;Description&quot; : &quot;Invoice amount does not match usage&quot;,
+    &quot;Status&quot; : &quot;In Progress&quot;,
+    &quot;RecordType&quot; : &quot;012dN0000029XWfQAM&quot;,
+    &quot;SLAStartTime&quot; : &quot;012dN0000029XWfQAM&quot;,
+    &quot;Priority&quot; : &quot;012dN0000029XWfQAM&quot;,
+    &quot;Subject&quot; : &quot;012dN0000029XWfQAM&quot;,
+    &quot;PreferredServiceDate&quot; : &quot;012dN0000029XWfQAM&quot;,
+    &quot;ServiceRequestCategory&quot; : &quot;012dN0000029XWfQAM&quot;
+  }
 }</expectedInputJson>
     <fieldLevelSecurityEnabled>true</fieldLevelSecurityEnabled>
     <inputType>JSON</inputType>
@@ -38,8 +46,32 @@
     <omniDataTransformItem>
         <disabled>false</disabled>
         <filterGroup>0.0</filterGroup>
+        <formulaConverted>| var:Case:IssueType &apos;Technical&apos; = &apos;Technical/\/\/Support&apos; | var:Case:IssueType &apos;Billing&apos; = &apos;Billing/\/\/Support&apos; | var:Case:IssueType &apos;Service&apos; = &apos;General/\/\/Inquiry&apos; &apos;&apos; IF IF IF</formulaConverted>
+        <formulaExpression>IF(%Case:IssueType% = &apos;Technical&apos;, 
+  &apos;Technical Support&apos;,
+  IF(%Case:IssueType% = &apos;Billing&apos;,
+   &apos;Billing Support&apos;,
+   IF(%Case:IssueType% = &apos;Service&apos;,
+    &apos;General Inquiry&apos;, &apos;&apos;)
+   )
+)</formulaExpression>
+        <formulaResultPath>RecordType</formulaResultPath>
+        <formulaSequence>2.0</formulaSequence>
+        <globalKey>3966db58-5be7-42ce-a1ab-1d6f0a03cc6f</globalKey>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>PostCaseDR</name>
+        <outputCreationSequence>0.0</outputCreationSequence>
+        <outputFieldName>Formula</outputFieldName>
+        <outputObjectName>Formula</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
         <globalKey>9f756041-316d-4c3f-803d-1ecff7d5bb41</globalKey>
-        <inputFieldName>InvoiceNumber</inputFieldName>
+        <inputFieldName>Case:InvoiceNumber</inputFieldName>
         <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
         <linkedObjectSequence>0.0</linkedObjectSequence>
         <name>PostCaseDR</name>
@@ -47,13 +79,14 @@
         <outputFieldName>Invoice_Number__c</outputFieldName>
         <outputObjectName>Case</outputObjectName>
         <requiredForUpsert>false</requiredForUpsert>
+        <transformValuesMappings>{ }</transformValuesMappings>
         <upsertKey>false</upsertKey>
     </omniDataTransformItem>
     <omniDataTransformItem>
         <disabled>false</disabled>
         <filterGroup>0.0</filterGroup>
         <globalKey>8059217a-5702-40ce-afe5-eea2cce50877</globalKey>
-        <inputFieldName>Id</inputFieldName>
+        <inputFieldName>Case:Id</inputFieldName>
         <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
         <linkedObjectSequence>0.0</linkedObjectSequence>
         <name>PostCaseDR</name>
@@ -61,13 +94,14 @@
         <outputFieldName>Id</outputFieldName>
         <outputObjectName>Case</outputObjectName>
         <requiredForUpsert>false</requiredForUpsert>
+        <transformValuesMappings>{ }</transformValuesMappings>
         <upsertKey>false</upsertKey>
     </omniDataTransformItem>
     <omniDataTransformItem>
         <disabled>false</disabled>
         <filterGroup>0.0</filterGroup>
         <globalKey>04f0a9f6-b112-4c16-947e-33bb911f32e7</globalKey>
-        <inputFieldName>PaymentStatus</inputFieldName>
+        <inputFieldName>Case:PaymentStatus</inputFieldName>
         <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
         <linkedObjectSequence>0.0</linkedObjectSequence>
         <name>PostCaseDR</name>
@@ -75,6 +109,7 @@
         <outputFieldName>Payment_Status__c</outputFieldName>
         <outputObjectName>Case</outputObjectName>
         <requiredForUpsert>false</requiredForUpsert>
+        <transformValuesMappings>{ }</transformValuesMappings>
         <upsertKey>false</upsertKey>
     </omniDataTransformItem>
     <omniDataTransformItem>
@@ -158,8 +193,53 @@
     <omniDataTransformItem>
         <disabled>false</disabled>
         <filterGroup>0.0</filterGroup>
+        <globalKey>12b95f38-014a-4baf-8db0-c6e4ef41a59b</globalKey>
+        <inputFieldName>Case:Subject</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>PostCaseDR</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Subject</outputFieldName>
+        <outputObjectName>Case</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <transformValuesMappings>{ }</transformValuesMappings>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>106e64be-0269-4acf-9f4e-33e55f5df6fb</globalKey>
+        <inputFieldName>Case:Product</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>PostCaseDR</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>ProductId</outputFieldName>
+        <outputObjectName>Case</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <transformValuesMappings>{ }</transformValuesMappings>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>5112a121-862f-4db8-84da-75cd26c9735f</globalKey>
+        <inputFieldName>Case:BusinessImpact</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>PostCaseDR</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Business_Impact__c</outputFieldName>
+        <outputObjectName>Case</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <transformValuesMappings>{ }</transformValuesMappings>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
         <globalKey>71424c3a-648d-4f28-9c80-b70c17e85b80</globalKey>
-        <inputFieldName>InvoiceDate</inputFieldName>
+        <inputFieldName>Case:InvoiceDate</inputFieldName>
         <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
         <linkedObjectSequence>0.0</linkedObjectSequence>
         <name>PostCaseDR</name>
@@ -167,13 +247,14 @@
         <outputFieldName>Invoice_Date__c</outputFieldName>
         <outputObjectName>Case</outputObjectName>
         <requiredForUpsert>false</requiredForUpsert>
+        <transformValuesMappings>{ }</transformValuesMappings>
         <upsertKey>false</upsertKey>
     </omniDataTransformItem>
     <omniDataTransformItem>
         <disabled>false</disabled>
         <filterGroup>0.0</filterGroup>
         <globalKey>cd66c094-32b2-46b2-821f-b8e5800cf8b1</globalKey>
-        <inputFieldName>BillingIssueType</inputFieldName>
+        <inputFieldName>Case:BillingIssueType</inputFieldName>
         <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
         <linkedObjectSequence>0.0</linkedObjectSequence>
         <name>PostCaseDR</name>
@@ -181,13 +262,14 @@
         <outputFieldName>Billing_Issue_Type__c</outputFieldName>
         <outputObjectName>Case</outputObjectName>
         <requiredForUpsert>false</requiredForUpsert>
+        <transformValuesMappings>{ }</transformValuesMappings>
         <upsertKey>false</upsertKey>
     </omniDataTransformItem>
     <omniDataTransformItem>
         <disabled>false</disabled>
         <filterGroup>0.0</filterGroup>
         <globalKey>35b35754-45da-4a7f-b386-6af6de26c96b</globalKey>
-        <inputFieldName>Description</inputFieldName>
+        <inputFieldName>Case:Description</inputFieldName>
         <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
         <linkedObjectSequence>0.0</linkedObjectSequence>
         <name>PostCaseDR</name>
@@ -195,27 +277,32 @@
         <outputFieldName>Description</outputFieldName>
         <outputObjectName>Case</outputObjectName>
         <requiredForUpsert>false</requiredForUpsert>
+        <transformValuesMappings>{ }</transformValuesMappings>
         <upsertKey>false</upsertKey>
     </omniDataTransformItem>
     <omniDataTransformItem>
         <disabled>false</disabled>
         <filterGroup>0.0</filterGroup>
         <globalKey>bb2df1ae-1ec8-436a-a04a-47c36931d7d8</globalKey>
-        <inputFieldName>IssueType</inputFieldName>
+        <inputFieldName>RecordType</inputFieldName>
         <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
         <linkedObjectSequence>0.0</linkedObjectSequence>
+        <lookupByFieldName>Name</lookupByFieldName>
+        <lookupObjectName>RecordType</lookupObjectName>
+        <lookupReturnedFieldName>Id</lookupReturnedFieldName>
         <name>PostCaseDR</name>
         <outputCreationSequence>1.0</outputCreationSequence>
         <outputFieldName>RecordTypeId</outputFieldName>
         <outputObjectName>Case</outputObjectName>
         <requiredForUpsert>false</requiredForUpsert>
+        <transformValuesMappings>{ }</transformValuesMappings>
         <upsertKey>false</upsertKey>
     </omniDataTransformItem>
     <omniDataTransformItem>
+        <defaultValue>New</defaultValue>
         <disabled>false</disabled>
         <filterGroup>0.0</filterGroup>
         <globalKey>2249c878-9f96-4460-a795-297adb79eda5</globalKey>
-        <inputFieldName>Status</inputFieldName>
         <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
         <linkedObjectSequence>0.0</linkedObjectSequence>
         <name>PostCaseDR</name>
@@ -223,13 +310,14 @@
         <outputFieldName>Status</outputFieldName>
         <outputObjectName>Case</outputObjectName>
         <requiredForUpsert>false</requiredForUpsert>
+        <transformValuesMappings>{ }</transformValuesMappings>
         <upsertKey>false</upsertKey>
     </omniDataTransformItem>
     <omniDataTransformItem>
         <disabled>false</disabled>
         <filterGroup>0.0</filterGroup>
         <globalKey>5d3bad98-d37d-41d2-90c1-798a5d6d49b6</globalKey>
-        <inputFieldName>Priority</inputFieldName>
+        <inputFieldName>Case:Priority</inputFieldName>
         <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
         <linkedObjectSequence>0.0</linkedObjectSequence>
         <name>PostCaseDR</name>
@@ -244,7 +332,7 @@
         <disabled>false</disabled>
         <filterGroup>0.0</filterGroup>
         <globalKey>8c392dab-9d1c-467d-85ff-898be2f66f0a</globalKey>
-        <inputFieldName>InvoiceAmount</inputFieldName>
+        <inputFieldName>Case:InvoiceAmount</inputFieldName>
         <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
         <linkedObjectSequence>0.0</linkedObjectSequence>
         <name>PostCaseDR</name>
@@ -252,6 +340,7 @@
         <outputFieldName>Invoice_Amount__c</outputFieldName>
         <outputObjectName>Case</outputObjectName>
         <requiredForUpsert>false</requiredForUpsert>
+        <transformValuesMappings>{ }</transformValuesMappings>
         <upsertKey>false</upsertKey>
     </omniDataTransformItem>
     <omniDataTransformItem>
@@ -269,18 +358,44 @@
         <transformValuesMappings>{ }</transformValuesMappings>
         <upsertKey>false</upsertKey>
     </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>ae84a8ed-95c9-4144-a962-936950d965a0</globalKey>
+        <inputFieldName>Case:ServiceRequestCategory</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>PostCaseDR</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Service_Request_Category__c</outputFieldName>
+        <outputObjectName>Case</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <transformValuesMappings>{ }</transformValuesMappings>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
+    <omniDataTransformItem>
+        <disabled>false</disabled>
+        <filterGroup>0.0</filterGroup>
+        <globalKey>a76756da-ab4c-4330-ad25-eb3e214c3d06</globalKey>
+        <inputFieldName>Case:PreferredServiceDate</inputFieldName>
+        <inputObjectQuerySequence>0.0</inputObjectQuerySequence>
+        <linkedObjectSequence>0.0</linkedObjectSequence>
+        <name>PostCaseDR</name>
+        <outputCreationSequence>1.0</outputCreationSequence>
+        <outputFieldName>Preferred_Service_Date__c</outputFieldName>
+        <outputObjectName>Case</outputObjectName>
+        <requiredForUpsert>false</requiredForUpsert>
+        <transformValuesMappings>{ }</transformValuesMappings>
+        <upsertKey>false</upsertKey>
+    </omniDataTransformItem>
     <outputType>SObject</outputType>
     <previewJsonData>{
-  &quot;Id&quot; : &quot;&quot;,
-  &quot;PaymentStatus&quot; : &quot;Paid&quot;,
-  &quot;BillingIssueType&quot; : &quot;Duplicate Invoice&quot;,
-  &quot;InvoiceAmount&quot; : 5000,
-  &quot;InvoiceDate&quot; : &quot;2026-01-04&quot;,
-  &quot;InvoiceNumber&quot; : &quot;523423&quot;,
-  &quot;Priority&quot; : &quot;Low&quot;,
-  &quot;IssueType&quot; : &quot;012dN0000029XWfQAM&quot;,
-  &quot;Description&quot; : &quot;Invoice amount does not match usage&quot;,
-  &quot;Status&quot; : &quot;In Progress&quot;
+  &quot;Subject&quot; : &quot;Service Issue - Installation&quot;,
+  &quot;PreferredServiceDate&quot; : &quot;2026-01-21&quot;,
+  &quot;IssueType&quot; : &quot;Service&quot;,
+  &quot;Priority&quot; : &quot;Medium&quot;,
+  &quot;Description&quot; : &quot;Errror&quot;,
+  &quot;ServiceRequestCategory&quot; : &quot;Installation&quot;
 }</previewJsonData>
     <processSuperBulk>false</processSuperBulk>
     <responseCacheTtlMinutes>0.0</responseCacheTtlMinutes>

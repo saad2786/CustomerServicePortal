@@ -386,7 +386,7 @@
         <transformValuesMappings>{
   &quot;Technical Support&quot; : &quot;Technical&quot;,
   &quot;Billing Support&quot; : &quot;Billing&quot;,
-  &quot;Service Support&quot; : &quot;Service&quot;
+  &quot;General Inquiry&quot; : &quot;Service&quot;
 }</transformValuesMappings>
         <upsertKey>false</upsertKey>
     </omniDataTransformItem>
